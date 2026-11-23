@@ -1,4 +1,5 @@
 import Link from "next/link";
+import clsx from "clsx";
 
 export const MAKTECH_LOGO = "https://maktechgroup.com/Diagonal/maktech_logo.webp";
 
@@ -13,16 +14,27 @@ export function Glyph({ className = "size-11" }: { className?: string }) {
   );
 }
 
-export function Brand({ href = "/", showMak = true, className = "" }: { href?: string; showMak?: boolean; className?: string }) {
+export function Brand({
+  href = "/",
+  showMak = true,
+  className = "",
+  tone = "default",
+}: {
+  href?: string;
+  showMak?: boolean;
+  className?: string;
+  tone?: "default" | "light";
+}) {
+  const light = tone === "light";
   return (
-    <Link href={href} className={`group inline-flex items-center gap-3.5 ${className}`} aria-label="MakAgent by MakTech">
+    <Link href={href} className={clsx("group inline-flex items-center gap-3.5", className)} aria-label="MakAgent by MakTech">
       <Glyph className="size-11 shrink-0 transition-transform duration-300 group-hover:scale-[1.04]" />
       <span className="flex flex-col leading-none">
-        <span className="font-brand text-[22px] font-bold tracking-[-0.04em]">
+        <span className={clsx("font-brand text-[22px] font-bold tracking-[-0.04em]", light ? "text-white" : "text-ink")}>
           MakAgent<span className="text-brand">.</span>
         </span>
         {showMak && (
-          <span className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink-3">
+          <span className={clsx("mt-1.5 text-[10px] font-semibold uppercase tracking-[0.2em]", light ? "text-white/55" : "text-ink-3")}>
             by MakTech
           </span>
         )}
