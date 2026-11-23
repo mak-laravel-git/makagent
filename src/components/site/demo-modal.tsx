@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { PlayCircle, Send } from "lucide-react";
+import clsx from "clsx";
 import { Button, Modal } from "@/components/ui";
 import { MockAgent } from "@/lib/mock-agent";
 
@@ -33,7 +34,7 @@ export function DemoButton({ className }: { className?: string }) {
 
   return (
     <>
-      <Button variant="outline" size="lg" pill className={className} onClick={() => setOpen(true)} icon={<PlayCircle className="size-[18px]" />}>
+      <Button variant="outline" size="lg" className={clsx("!rounded-md", className)} onClick={() => setOpen(true)} icon={<PlayCircle className="size-[18px]" />}>
         See it in action
       </Button>
       <Modal open={open} onClose={() => setOpen(false)} title="A conversation that becomes a sale" footer={<><Button variant="ghost" onClick={() => setOpen(false)}>Close</Button><Button href="/signup" variant="primary">Build my agent</Button></>}>

@@ -34,23 +34,23 @@ export function SiteHeader() {
     <header className={clsx("fixed inset-x-0 top-0 z-50 transition-all duration-300", scrolled || open ? "border-b border-line bg-bg/80 backdrop-blur-xl" : "border-b border-transparent")}>
       <div className="container-x flex h-[76px] items-center justify-between gap-6">
         <Brand />
-        <nav aria-label="Main" className="hidden items-center gap-1 rounded-full border border-line bg-surface/70 p-1 backdrop-blur md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-7 md:flex">
           {links.map((l) => {
             const active = l.href === path;
             return (
-              <Link key={l.href} href={l.href} aria-current={active ? "page" : undefined} className={clsx("rounded-full px-4 py-2 text-sm font-medium transition-colors", active ? "bg-raised text-ink" : "text-ink-2 hover:text-ink")}>
+              <Link key={l.href} href={l.href} aria-current={active ? "page" : undefined} className={clsx("text-sm font-medium transition-colors", active ? "text-ink" : "text-ink-2 hover:text-ink")}>
                 {l.label}
               </Link>
             );
           })}
         </nav>
-        <div className="hidden items-center gap-2 md:flex">
-          <button onClick={toggleTheme} aria-label="Toggle theme" className="grid size-10 place-items-center rounded-full text-ink-2 transition-colors hover:bg-line hover:text-ink">
+        <div className="hidden items-center gap-3 md:flex">
+          <button onClick={toggleTheme} aria-label="Toggle theme" className="grid size-10 place-items-center text-ink-2 transition-colors hover:text-ink">
             {theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
           </button>
-          <Link href="/login" className="px-3 text-sm font-medium text-ink-2 transition-colors hover:text-ink">Log in</Link>
-          <Button href="/signup" variant="primary" pill icon={undefined}>
-            Start free trial <ArrowRight className="size-4" />
+          <Link href="/login" className="px-2 text-sm font-medium text-ink-2 transition-colors hover:text-ink">Log in</Link>
+          <Button href="/signup" variant="primary" className="!rounded-md" icon={undefined}>
+            Start free <ArrowRight className="size-4" />
           </Button>
         </div>
         <button className="grid size-10 place-items-center rounded-full border border-line md:hidden" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
@@ -65,8 +65,8 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="mt-4 flex gap-2">
-            <Button href="/login" variant="outline" pill className="flex-1">Log in</Button>
-            <Button href="/signup" variant="primary" pill className="flex-1">Start free</Button>
+            <Button href="/login" variant="outline" className="flex-1 !rounded-md">Log in</Button>
+            <Button href="/signup" variant="primary" className="flex-1 !rounded-md">Start free</Button>
           </div>
         </div>
       )}
