@@ -40,7 +40,7 @@ export default function Compliance() {
       )}
       {tab === "policies" && (
         <Card><CardHeader title="Published policy versions" />
-          {[["Privacy Policy", "/privacy", "1.0"], ["Terms of Service", "/terms", "1.0"], ["Data Deletion Instructions", "/data-deletion", "1.0"]].map(([t, href, v]) => <div key={t} className="flex items-center justify-between border-b border-line px-5 py-4 last:border-0"><div><div className="font-medium">{t}</div><div className="text-xs text-ink-3">Updated 21 October 2026</div></div><div className="flex items-center gap-3"><Badge tone="success">v{v}</Badge><Button size="sm" href={href}>View</Button></div></div>)}</Card>
+          {[["Privacy Policy", "/privacy", "2.0"], ["Terms of Service", "/terms", "2.0"], ["Data Deletion Instructions", "/data-deletion", "2.0"]].map(([t, href, v]) => <div key={t} className="flex items-center justify-between border-b border-line px-5 py-4 last:border-0"><div><div className="font-medium">{t}</div><div className="text-xs text-ink-3">Updated 23 November 2026</div></div><div className="flex items-center gap-3"><Badge tone="success">v{v}</Badge><Button size="sm" href={href}>View</Button></div></div>)}</Card>
       )}
       {tab === "audit" && (
         <Card>

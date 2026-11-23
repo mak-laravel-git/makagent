@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FileText, ShieldCheck, Trash2 } from "lucide-react";
 import clsx from "clsx";
 import { Button } from "@/components/ui";
-import { LEGAL } from "@/lib/legal";
+import { LEGAL, LEGAL_META } from "@/lib/legal";
 import { store } from "@/lib/store";
 import { useUI } from "@/components/providers";
 
@@ -35,11 +35,21 @@ export function LegalPage({ id }: { id: "privacy" | "terms" | "data-deletion" })
               </Link>
             ))}
           </nav>
+          <div className="mt-6 hidden space-y-1 text-xs text-ink-3 lg:block">
+            <p>Production: makagent.maktechgroup.com</p>
+            <p>
+              Support:{" "}
+              <a className="text-brand hover:underline" href={`mailto:${LEGAL_META.supportEmail}`}>
+                {LEGAL_META.supportEmail}
+              </a>
+            </p>
+          </div>
         </aside>
         <article className="max-w-3xl">
           <h1 className="text-4xl font-bold tracking-[-0.035em] md:text-5xl">{pages.find((p) => p.id === id)?.title}</h1>
-          <div className="mt-3 text-sm text-ink-3">Version 1.0 · Updated 21 October 2026 · Preview policy text</div>
-          <div className="mt-8 rounded-xl border border-warning/30 bg-warning/10 p-4 text-sm text-warning">Pre-production placeholder. Replace operator/contact details and obtain legal review before using this for a live service or App Review.</div>
+          <div className="mt-3 text-sm text-ink-3">
+            Version {LEGAL_META.version} · Updated {LEGAL_META.effectiveDate} · MakTech Group · SalesPilot AI
+          </div>
           <div className="legal-prose mt-10" dangerouslySetInnerHTML={{ __html: `<p>${doc.intro}</p>` }} />
           {doc.sections.map(([title, html]) => (
             <section key={title} className="legal-prose mt-12">
@@ -47,7 +57,9 @@ export function LegalPage({ id }: { id: "privacy" | "terms" | "data-deletion" })
               {html.includes("<!--RESET-->") ? (
                 <>
                   <div dangerouslySetInnerHTML={{ __html: html.replace("<!--RESET-->", "") }} />
-                  <Button variant="danger" onClick={reset}>Reset local demo data</Button>
+                  <Button variant="danger" onClick={reset}>
+                    Reset local demo data
+                  </Button>
                 </>
               ) : (
                 <div dangerouslySetInnerHTML={{ __html: html }} />
