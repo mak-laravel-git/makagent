@@ -48,7 +48,7 @@ export function LegalPage({ id }: { id: "privacy" | "terms" | "data-deletion" })
         <article className="max-w-3xl">
           <h1 className="text-4xl font-bold tracking-[-0.035em] md:text-5xl">{pages.find((p) => p.id === id)?.title}</h1>
           <div className="mt-3 text-sm text-ink-3">
-            Version {LEGAL_META.version} · Updated {LEGAL_META.effectiveDate} · MakTech Group · SalesPilot AI
+            Version {LEGAL_META.version} · Updated {LEGAL_META.effectiveDate} · MakTech Group · MakAgent
           </div>
           <div className="legal-prose mt-10" dangerouslySetInnerHTML={{ __html: `<p>${doc.intro}</p>` }} />
           {doc.sections.map(([title, html]) => (

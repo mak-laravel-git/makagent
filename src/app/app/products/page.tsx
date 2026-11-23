@@ -59,7 +59,7 @@ function Products() {
   const retry = (id: string) => { store.patch("products", id, { sync: "Pending" }); setTimeout(() => { store.patch("products", id, { sync: "Synced to AI" }); toast("Product synced to your AI.", "success"); }, 700); };
   const bulk = (st: string) => { store.update<Product[]>("products", (ps) => ps.filter((p) => selected.has(p.id)).forEach((p) => { p.status = st; p.sync = "Synced to AI"; })); toast(`Selected products ${st === "Active" ? "published" : "unpublished"}.`, "success"); };
   const bulkDelete = async () => { if (await confirm({ title: `Delete ${selected.size} products?`, message: "These products will no longer be available to your AI. Existing orders keep their item details.", danger: true })) { store.update<Product[]>("products", (ps) => ps.filter((p) => !selected.has(p.id))); setSelected(new Set()); toast("Selected products deleted.", "success"); } };
-  const exportCsv = () => { const list = selected.size ? all.filter((p) => selected.has(p.id)) : rows; download("salespilot-products.csv", toCsv(list.map((p) => ({ name: p.name, sku: p.sku, category: p.category, price: p.price, discount_price: p.discountPrice, stock: p.stock, status: p.status, description: p.description, ai_instructions: p.instructions })))); };
+  const exportCsv = () => { const list = selected.size ? all.filter((p) => selected.has(p.id)) : rows; download("makagent-products.csv", toCsv(list.map((p) => ({ name: p.name, sku: p.sku, category: p.category, price: p.price, discount_price: p.discountPrice, stock: p.stock, status: p.status, description: p.description, ai_instructions: p.instructions })))); };
 
   return (
     <>

@@ -56,7 +56,7 @@ export default function AnalyticsPage() {
   const byChannel = ["Facebook", "Instagram", "WhatsApp"].map((c, i) => ({ name: c, value: d.cs.filter((x) => x.channel === c).length, color: ["#6e93ff", "#f074c4", "#3ccf91"][i] }));
 
   const exportCsv = () => {
-    download(`salespilot-analytics-${start}-${end}.csv`, toCsv(d.series.map((r) => { const o = d.ords.filter((x) => key(x.createdAt) === r.date); return { date: r.date, messages_demo: r.messages, ai_share_demo_pct: r.aiShare, response_time_demo_s: r.responseTime, orders_saved: o.length, revenue_non_cancelled_bdt: o.filter((x) => x.status !== "Cancelled").reduce((s, x) => s + x.total, 0) }; })));
+    download(`makagent-analytics-${start}-${end}.csv`, toCsv(d.series.map((r) => { const o = d.ords.filter((x) => key(x.createdAt) === r.date); return { date: r.date, messages_demo: r.messages, ai_share_demo_pct: r.aiShare, response_time_demo_s: r.responseTime, orders_saved: o.length, revenue_non_cancelled_bdt: o.filter((x) => x.status !== "Cancelled").reduce((s, x) => s + x.total, 0) }; })));
     toast("Report exported.", "success");
   };
 

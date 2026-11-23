@@ -8,8 +8,8 @@ const dmMono = DM_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "
 const bengali = Noto_Sans_Bengali({ subsets: ["bengali"], variable: "--font-bengali", display: "swap" });
 
 export const metadata: Metadata = {
-  title: { default: "SalesPilot AI — by MakTech", template: "%s · SalesPilot AI" },
-  description: "SalesPilot is the AI sales agent that turns every Facebook, Instagram and WhatsApp message into an order. Built by MakTech.",
+  title: { default: "MakAgent — by MakTech", template: "%s · MakAgent" },
+  description: "MakAgent is the AI sales agent that turns every Facebook, Instagram and WhatsApp message into an order. Built by MakTech.",
   icons: { icon: "https://maktechgroup.com/Infinity.webp" },
 };
 

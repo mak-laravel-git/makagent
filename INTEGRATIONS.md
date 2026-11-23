@@ -33,7 +33,7 @@ Publishing/sending, media upload, inbox/comment synchronization, durable jobs, w
 Requires Python **3.12 or 3.13**. No Node/npm or frontend build is needed. Unlike the demo, real connections cannot run by double-clicking HTML or with a Python static-only server. **Never run a generic static server over a configured tree containing `.env` or private credentials; use the whitelisted backend instead.**
 
 ```sh
-cd salespilot
+cd MakAgent
 python3 -m venv .venv
 # macOS/Linux:
 . .venv/bin/activate
@@ -68,7 +68,7 @@ Copy `.env.example` into the project root. The populated `.env` is **never serve
   ```
 
   Put the output directly in the protected server environment, not in chat. Back it up separately from the database. Changing/deleting the key makes old ciphertext unreadable; this release does not provide automatic key rotation/migration.
-- `SALESPILOT_DATA_DIR`: private data directory. Default `~/.local/share/salespilot-live`. SQLite/automatic development key are outside the served source tree. Directory/key permissions are restricted where supported.
+- `MAKAGENT_DATA_DIR`: private data directory. Default `~/.local/share/makagent-live`. SQLite/automatic development key are outside the served source tree. Directory/key permissions are restricted where supported.
 - `LINKEDIN_CLIENT_ID`, `LINKEDIN_CLIENT_SECRET`.
 - `META_CLIENT_ID`, `META_CLIENT_SECRET`, `META_GRAPH_VERSION`; optional `META_LOGIN_CONFIG_ID` if required by the app’s user-token Business Login configuration. Select a supported Graph version from the app dashboard; none is guessed.
 - `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` for a Web application OAuth client with YouTube Data API enabled.

@@ -3,12 +3,12 @@ import argparse, getpass, os, sqlite3
 from .core import Settings,DB,create_owner,PASSWORDS
 
 def main():
-    p=argparse.ArgumentParser(description='SalesPilot connection service operator tools')
+    p=argparse.ArgumentParser(description='MakAgent connection service operator tools')
     p.add_argument('command',choices=['init','create-owner','set-password']);p.add_argument('--email');args=p.parse_args()
     cfg=Settings.load().prepare();db=DB(cfg)
     if args.command=='init':print('Database and encryption key ready. Create an owner next.');return
     email=(args.email or input('Owner email: ')).strip().lower()
-    password=os.getenv('SALESPILOT_OWNER_PASSWORD') or getpass.getpass('Unique password (at least 14 characters): ')
+    password=os.getenv('MAKAGENT_OWNER_PASSWORD') or getpass.getpass('Unique password (at least 14 characters): ')
     if not 14<=len(password)<=256:raise SystemExit('Password must be 14–256 characters.')
     if args.command=='create-owner':
         try:create_owner(db,email,password)

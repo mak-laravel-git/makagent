@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const MAKTECH_LOGO = "https://maktechgroup.com/Diagonal/maktech_logo.webp";
 
-/** SalesPilot mark: a stylised paper-plane / pointer glyph in MakTech orange. */
+/** MakAgent mark: a stylised paper-plane / pointer glyph in MakTech orange. */
 export function Glyph({ className = "size-8" }: { className?: string }) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden>
@@ -15,10 +15,10 @@ export function Glyph({ className = "size-8" }: { className?: string }) {
 
 export function Brand({ href = "/", showMak = true, className = "" }: { href?: string; showMak?: boolean; className?: string }) {
   return (
-    <Link href={href} className={`group inline-flex items-center gap-3 ${className}`} aria-label="SalesPilot AI by MakTech">
+    <Link href={href} className={`group inline-flex items-center gap-3 ${className}`} aria-label="MakAgent by MakTech">
       <Glyph />
       <span className="flex flex-col leading-none">
-        <span className="text-[17px] font-bold tracking-[-0.03em]">SalesPilot<span className="text-brand">.</span></span>
+        <span className="text-[17px] font-bold tracking-[-0.03em]">MakAgent<span className="text-brand">.</span></span>
         {showMak && <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-3">by MakTech</span>}
       </span>
     </Link>

@@ -29,7 +29,7 @@ class Settings:
     @classmethod
     def load(cls):
         load_dotenv(ROOT / '.env', override=False)
-        return cls(Path(os.getenv('SALESPILOT_DATA_DIR', str(Path.home()/'.local/share/salespilot-live'))), os.getenv('PUBLIC_BASE_URL','http://localhost:8082').rstrip('/'), os.getenv('APP_ENV','development')=='production', os.getenv('TOKEN_ENCRYPTION_KEY',''), dict(os.environ))
+        return cls(Path(os.getenv('MAKAGENT_DATA_DIR', str(Path.home()/'.local/share/makagent-live'))), os.getenv('PUBLIC_BASE_URL','http://localhost:8082').rstrip('/'), os.getenv('APP_ENV','development')=='production', os.getenv('TOKEN_ENCRYPTION_KEY',''), dict(os.environ))
     def prepare(self):
         self.data_dir = self.data_dir.expanduser().resolve()
         self.data_dir.mkdir(parents=True, exist_ok=True)
@@ -51,7 +51,7 @@ class Settings:
     def env(self, key): return self.values.get(key, '').strip()
     def callback(self, provider): return self.public_url + '/api/oauth/' + provider + '/callback'
     @property
-    def cookie(self): return '__Host-salespilot_session' if self.production else 'salespilot_session'
+    def cookie(self): return '__Host-makagent_session' if self.production else 'makagent_session'
     def encrypt(self, value): return self.fernet.encrypt(json.dumps(value,separators=(',',':')).encode()).decode()
     def decrypt(self, value): return json.loads(self.fernet.decrypt(value.encode()))
 

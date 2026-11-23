@@ -165,7 +165,7 @@ class ConnectionTests(unittest.TestCase):
    create_owner(app.state.db,'prod@example.com',PASSWORD)
    with TestClient(app,base_url='https://localhost') as client:
     r=client.post('/api/auth/login',json={'email':'prod@example.com','password':PASSWORD},headers={'Origin':'https://localhost'})
-    self.assertEqual(r.status_code,200,r.text);cookie=r.headers['set-cookie'];self.assertIn('__Host-salespilot_session=',cookie);self.assertIn('Secure',cookie);self.assertIn('HttpOnly',cookie);self.assertIn('SameSite=lax',cookie)
+    self.assertEqual(r.status_code,200,r.text);cookie=r.headers['set-cookie'];self.assertIn('__Host-makagent_session=',cookie);self.assertIn('Secure',cookie);self.assertIn('HttpOnly',cookie);self.assertIn('SameSite=lax',cookie)
  def test_12_request_limit_and_logout(self):
   r=self.client.post('/api/auth/login',content=b'x'*21000,headers={'Origin':'http://localhost','Content-Type':'application/json'});self.assertEqual(r.status_code,413)
   self.assertEqual(self.post('/api/auth/logout').status_code,200);self.assertEqual(self.client.get('/api/auth/me').status_code,401)

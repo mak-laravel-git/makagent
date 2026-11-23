@@ -3,11 +3,11 @@ services:
     build: .
     env_file: .env
     environment:
-      SALESPILOT_DATA_DIR: /data
+      MAKAGENT_DATA_DIR: /data
     ports:
       - "127.0.0.1:8082:8000"
     volumes:
-      - salespilot-data:/data
+      - makagent-data:/data
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "python", "-c", "import os,urllib.request; r=urllib.request.Request('http://127.0.0.1:8000/api/health',headers={'Host':os.environ.get('PUBLIC_BASE_URL','http://localhost:8082').split('://')[-1],'X-Forwarded-Proto':'https'}); urllib.request.urlopen(r,timeout=4)"]
@@ -15,4 +15,4 @@ services:
       timeout: 5s
       retries: 3
 volumes:
-  salespilot-data:
+  makagent-data:

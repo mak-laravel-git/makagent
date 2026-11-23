@@ -36,6 +36,6 @@ export const generalFaq: [string, string][] = [
   ["Do I need technical knowledge to get started?", "Not at all. Connect your business channels, add your products, teach the agent your policies, and try a few conversations. The guided setup walks you through every step."],
   ["Can the agent reply in Bangla and Banglish?", "Yes. The agent answers in Bangla, Banglish or English from your product catalog, matching the way each customer writes."],
   ["What happens when a customer needs a real person?", "The agent pauses when a customer asks for a human, an unknown question needs help, or an escalation rule applies. Your team takes over with the full conversation history intact."],
-  ["Can I use my existing business accounts?", "Yes — SalesPilot is designed to connect the Facebook Pages, Instagram accounts and WhatsApp numbers you already manage."],
+  ["Can I use my existing business accounts?", "Yes — MakAgent is designed to connect the Facebook Pages, Instagram accounts and WhatsApp numbers you already manage."],
   ["Is this connected to Meta or a live AI service?", "This preview runs entirely in your browser with simulated connections, messages and billing, so you can explore every workflow safely. Please don’t enter real credentials or sensitive information."],
 ];

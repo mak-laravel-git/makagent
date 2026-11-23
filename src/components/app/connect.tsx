@@ -152,7 +152,7 @@ function FacebookFlow({ onClose, onDone, opts }: { onClose: () => void; onDone?:
         {error ? <Failure code={error} retry={() => setError(null)} /> : (
           <>
             <Progress label="Business connection" step={step} total={4} title={titles[step]} />
-            {step === 0 && (<div className="space-y-4"><p className="text-sm text-ink-2">Use a fictional business profile to authorise SalesPilot. No external window or real login will open.</p>
+            {step === 0 && (<div className="space-y-4"><p className="text-sm text-ink-2">Use a fictional business profile to authorise MakAgent. No external window or real login will open.</p>
               <div className="flex items-center gap-3 rounded-xl border border-line p-3.5"><Avatar name="Nusrat Jahan" size={40} /><div className="flex-1 leading-tight"><div className="font-semibold">Nusrat Jahan</div><div className="text-xs text-ink-3">Demo business administrator</div></div><Badge tone="info">Demo profile</Badge></div>
               <Field label="Demo email"><Input type="email" defaultValue="nusrat@example.com" autoComplete="off" /></Field><Field label="Demo password"><Input type="password" defaultValue="not-a-real-password" autoComplete="off" /></Field>
               <div className="rounded-lg border border-warning/30 bg-warning/10 p-3 text-xs text-warning">Never enter a real Facebook password. This is a local simulation, not a Meta login.</div></div>)}

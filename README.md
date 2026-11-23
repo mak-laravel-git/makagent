@@ -1,4 +1,4 @@
-# SalesPilot AI (makagent)
+# MakAgent (makagent)
 
 Next.js 15 · React 19 · TypeScript · Tailwind CSS v4
 
@@ -10,7 +10,7 @@ npm run dev        # http://localhost:3100
 npm run build && npm start   # http://localhost:3000
 ```
 
-Log in with **Enter as Client** or **Enter as Admin**. Demo state lives in `localStorage` (`salespilot.next.v3`).
+Log in with **Enter as Client** or **Enter as Admin**. Demo state lives in `localStorage` (`MakAgent.next.v3`).
 
 ## Optional Python backend
 

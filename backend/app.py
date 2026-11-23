@@ -39,7 +39,7 @@ def create_app(settings=None,transport=None):
         db.prune()
         async with httpx.AsyncClient(timeout=httpx.Timeout(20,connect=8),follow_redirects=False,trust_env=False,http2=False,transport=transport,limits=httpx.Limits(max_connections=30,max_keepalive_connections=10)) as client:
             app.state.http=client;yield
-    app=FastAPI(title='SalesPilot real connection service',version='1.0.0',docs_url=None,redoc_url=None,openapi_url=None,lifespan=lifespan)
+    app=FastAPI(title='MakAgent real connection service',version='1.0.0',docs_url=None,redoc_url=None,openapi_url=None,lifespan=lifespan)
     app.state.cfg=cfg;app.state.db=db;app.state.verify_locks={}
     def fail(code,message,status=400):raise HTTPException(status,detail={'code':code,'message':message})
     @app.middleware('http')
@@ -118,7 +118,7 @@ def create_app(settings=None,transport=None):
     @app.get('/api/health')
     async def health():
         with db.open() as c:ready=c.execute('SELECT COUNT(*) FROM users').fetchone()[0]>0
-        return {'service':'salespilot-connections','version':'1.0.0','owner_ready':ready,'production':cfg.production,'mode':'live-adapters','publishing_enabled':False}
+        return {'service':'makagent-connections','version':'1.0.0','owner_ready':ready,'production':cfg.production,'mode':'live-adapters','publishing_enabled':False}
     @app.post('/api/auth/login')
     async def login(body:Login,request:Request):
         db.prune()

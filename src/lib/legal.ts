@@ -6,7 +6,7 @@
 
 export const LEGAL_META = {
   operator: "MakTech Group",
-  product: "SalesPilot AI",
+  product: "MakAgent",
   productionUrl: "https://makagent.maktechgroup.com",
   stagingUrl: "https://staging-makagent.maktechgroup.com",
   supportEmail: "support@maktechgroup.com",
@@ -19,11 +19,11 @@ export const LEGAL_META = {
 export const LEGAL: Record<string, { intro: string; sections: [string, string][] }> = {
   privacy: {
     intro:
-      "This Privacy Policy explains how <strong>MakTech Group</strong> (“MakTech”, “we”, “us”) collects, uses, shares and retains information when you use <strong>SalesPilot AI</strong> at <a href=\"https://makagent.maktechgroup.com\">https://makagent.maktechgroup.com</a> (production) and our staging environment at <a href=\"https://staging-makagent.maktechgroup.com\">https://staging-makagent.maktechgroup.com</a>. It covers account data, Meta (Facebook, Instagram, WhatsApp) and other channel connections, customer conversations processed for your business, and the limited use of AI processors. By creating an account or connecting a channel, you agree to this Policy and our <a href=\"/terms\">Terms of Service</a>.",
+      "This Privacy Policy explains how <strong>MakTech Group</strong> (“MakTech”, “we”, “us”) collects, uses, shares and retains information when you use <strong>MakAgent</strong> at <a href=\"https://makagent.maktechgroup.com\">https://makagent.maktechgroup.com</a> (production) and our staging environment at <a href=\"https://staging-makagent.maktechgroup.com\">https://staging-makagent.maktechgroup.com</a>. It covers account data, Meta (Facebook, Instagram, WhatsApp) and other channel connections, customer conversations processed for your business, and the limited use of AI processors. By creating an account or connecting a channel, you agree to this Policy and our <a href=\"/terms\">Terms of Service</a>.",
     sections: [
       [
         "1. Who we are and how to contact us",
-        `<p><strong>Controller / operator:</strong> MakTech Group, operating SalesPilot AI.</p>
+        `<p><strong>Controller / operator:</strong> MakTech Group, operating MakAgent.</p>
 <ul>
 <li><strong>Production site:</strong> <a href="https://makagent.maktechgroup.com">https://makagent.maktechgroup.com</a></li>
 <li><strong>Staging site:</strong> <a href="https://staging-makagent.maktechgroup.com">https://staging-makagent.maktechgroup.com</a></li>
@@ -35,7 +35,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
       ],
       [
         "2. Information we collect",
-        `<p>Depending on how you use SalesPilot AI, we may process:</p>
+        `<p>Depending on how you use MakAgent, we may process:</p>
 <ul>
 <li><strong>Account &amp; business profile:</strong> name, business name, email, phone, language preferences, team roles, and subscription/billing references.</li>
 <li><strong>Authentication &amp; security:</strong> password hashes (never plaintext passwords), session identifiers, CSRF tokens, IP-related security events, and audit logs of sensitive actions.</li>
@@ -44,7 +44,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
 <li><strong>Business knowledge:</strong> products, prices, stock, FAQs, policies and documents you upload so the agent can answer accurately.</li>
 <li><strong>Service usage:</strong> feature usage, error diagnostics, and consent records (for example acceptance of Terms and AI processing disclosure).</li>
 </ul>
-<p>We do not ask for Meta login passwords inside SalesPilot AI. Channel access is granted only through the provider’s official OAuth / permission flow.</p>`,
+<p>We do not ask for Meta login passwords inside MakAgent. Channel access is granted only through the provider’s official OAuth / permission flow.</p>`,
       ],
       [
         "3. How we use information (purposes)",
@@ -62,7 +62,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
       ],
       [
         "4. Meta Platform data (Facebook, Instagram, WhatsApp)",
-        `<p>When you connect Meta products, SalesPilot AI may receive data permitted by the permissions you approve in Meta’s dialog, for example:</p>
+        `<p>When you connect Meta products, MakAgent may receive data permitted by the permissions you approve in Meta’s dialog, for example:</p>
 <ul>
 <li>identity of the authorised user and manageable Pages / Instagram professional accounts;</li>
 <li>Page and Instagram messaging content and metadata needed to reply;</li>
@@ -70,11 +70,11 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
 <li>WhatsApp Business Cloud API phone-number / WABA identifiers and message events you authorise.</li>
 </ul>
 <p>We request only the permissions required for the features you enable. You can disconnect a channel in <strong>Connections</strong> and revoke the app in Meta Business / Facebook settings. Disconnecting stops new access; previously stored workspace copies are removed under our retention and deletion rules (see below and <a href="/data-deletion">Data Deletion Instructions</a>).</p>
-<p>Use of information received from Meta APIs complies with the Meta Platform Terms, Meta Developer Policies and applicable WhatsApp Business terms. Meta-sourced data is not transferred to another app or used for purposes outside providing SalesPilot AI to your business, except where required by law.</p>`,
+<p>Use of information received from Meta APIs complies with the Meta Platform Terms, Meta Developer Policies and applicable WhatsApp Business terms. Meta-sourced data is not transferred to another app or used for purposes outside providing MakAgent to your business, except where required by law.</p>`,
       ],
       [
         "5. AI processing — what is sent, why, and how long it is kept",
-        `<p>SalesPilot AI may use contracted AI language-model processors to draft replies, summarise conversations, match products, and assist with catalog Q&amp;A.</p>
+        `<p>MakAgent may use contracted AI language-model processors to draft replies, summarise conversations, match products, and assist with catalog Q&amp;A.</p>
 <p><strong>What may be sent to an AI processor:</strong></p>
 <ul>
 <li>the customer message or comment text that needs a reply;</li>
@@ -87,7 +87,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
 <p><strong>How long AI processors keep it:</strong></p>
 <ul>
 <li><strong>Transient processing:</strong> content is processed to produce a reply and is not retained by the AI vendor beyond the vendor’s documented API retention for abuse monitoring (typically up to <strong>30 days</strong>, often shorter), after which it is deleted or de-identified according to the vendor contract.</li>
-<li><strong>SalesPilot storage:</strong> the resulting draft/reply and the original conversation remain in your workspace under our conversation retention period of <strong>90 days</strong> by default (you may configure a shorter period where the product allows). After that period, conversation content is deleted from active systems; encrypted backups expire within a further <strong>90 days</strong>.</li>
+<li><strong>MakAgent storage:</strong> the resulting draft/reply and the original conversation remain in your workspace under our conversation retention period of <strong>90 days</strong> by default (you may configure a shorter period where the product allows). After that period, conversation content is deleted from active systems; encrypted backups expire within a further <strong>90 days</strong>.</li>
 </ul>
 <p>AI output can be wrong. Businesses should review critical replies, keep accurate catalog data, and provide a human escalation path. Enabling AI features constitutes your instruction to process the relevant content for that purpose.</p>`,
       ],
@@ -98,7 +98,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
 <li><strong>Hosting / infrastructure</strong> providers that store the application and encrypted databases;</li>
 <li><strong>AI processors</strong> as described in section 5;</li>
 <li><strong>Meta and other channel providers</strong> when you authorise a connection or when we send/receive messages through their APIs;</li>
-<li><strong>Payment processors</strong> if you purchase a paid plan (card data is handled by the payment provider, not stored as full PAN by SalesPilot AI);</li>
+<li><strong>Payment processors</strong> if you purchase a paid plan (card data is handled by the payment provider, not stored as full PAN by MakAgent);</li>
 <li><strong>Professional advisers or authorities</strong> when required by law or to protect rights and safety.</li>
 </ul>
 <p>International transfers may occur where our processors operate outside Bangladesh. We use contracts and appropriate safeguards before enabling such transfers for production workloads.</p>`,
@@ -124,7 +124,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
       ],
       [
         "10. Children",
-        `<p>SalesPilot AI is for adult business users. It is not directed at children. Do not upload children’s data without a lawful basis and appropriate safeguards.</p>`,
+        `<p>MakAgent is for adult business users. It is not directed at children. Do not upload children’s data without a lawful basis and appropriate safeguards.</p>`,
       ],
       [
         "11. Changes",
@@ -136,7 +136,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
 
   terms: {
     intro:
-      "These Terms of Service (“Terms”) govern access to <strong>SalesPilot AI</strong>, operated by <strong>MakTech Group</strong>, at <a href=\"https://makagent.maktechgroup.com\">https://makagent.maktechgroup.com</a>. By creating an account, connecting a channel, or using the service, you agree to these Terms and the <a href=\"/privacy\">Privacy Policy</a>.",
+      "These Terms of Service (“Terms”) govern access to <strong>MakAgent</strong>, operated by <strong>MakTech Group</strong>, at <a href=\"https://makagent.maktechgroup.com\">https://makagent.maktechgroup.com</a>. By creating an account, connecting a channel, or using the service, you agree to these Terms and the <a href=\"/privacy\">Privacy Policy</a>.",
     sections: [
       [
         "1. Eligibility and accounts",
@@ -144,11 +144,11 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
       ],
       [
         "2. The service",
-        `<p>SalesPilot AI helps businesses manage sales conversations across connected channels (including Meta products you authorise), maintain catalog knowledge, and use optional AI-assisted replies. Features may differ by plan. Staging at <a href="https://staging-makagent.maktechgroup.com">https://staging-makagent.maktechgroup.com</a> is for testing and may be reset without notice.</p>`,
+        `<p>MakAgent helps businesses manage sales conversations across connected channels (including Meta products you authorise), maintain catalog knowledge, and use optional AI-assisted replies. Features may differ by plan. Staging at <a href="https://staging-makagent.maktechgroup.com">https://staging-makagent.maktechgroup.com</a> is for testing and may be reset without notice.</p>`,
       ],
       [
         "3. Channel and Meta responsibilities",
-        `<p>You must have authority over every Facebook Page, Instagram account, WhatsApp Business asset or other channel you connect. You must comply with Meta Platform Terms, WhatsApp Business policies, Instagram/Facebook messaging rules (including reply windows, templates, consent and opt-outs), and all applicable laws. Disconnect channels you no longer control. Local removal in SalesPilot AI does not by itself revoke provider-side grants—also revoke the app in Meta’s settings.</p>`,
+        `<p>You must have authority over every Facebook Page, Instagram account, WhatsApp Business asset or other channel you connect. You must comply with Meta Platform Terms, WhatsApp Business policies, Instagram/Facebook messaging rules (including reply windows, templates, consent and opt-outs), and all applicable laws. Disconnect channels you no longer control. Local removal in MakAgent does not by itself revoke provider-side grants—also revoke the app in Meta’s settings.</p>`,
       ],
       [
         "4. Acceptable use",
@@ -168,7 +168,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
       ],
       [
         "8. Intellectual property",
-        `<p>MakTech and its licensors own the SalesPilot AI software and branding. You retain rights to your business content and grant us a limited licence to host and process it solely to provide the service. Meta and other platform names are trademarks of their owners; connection does not imply endorsement.</p>`,
+        `<p>MakTech and its licensors own the MakAgent software and branding. You retain rights to your business content and grant us a limited licence to host and process it solely to provide the service. Meta and other platform names are trademarks of their owners; connection does not imply endorsement.</p>`,
       ],
       [
         "9. Disclaimers and liability",
@@ -188,7 +188,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
 
   "data-deletion": {
     intro:
-      "These Data Deletion Instructions explain how to remove data from <strong>SalesPilot AI</strong> (MakTech Group). Use them for Meta App Review, user requests, and your own compliance programme. Production: <a href=\"https://makagent.maktechgroup.com\">https://makagent.maktechgroup.com</a> · Privacy contact: <a href=\"mailto:privacy@maktechgroup.com\">privacy@maktechgroup.com</a>.",
+      "These Data Deletion Instructions explain how to remove data from <strong>MakAgent</strong> (MakTech Group). Use them for Meta App Review, user requests, and your own compliance programme. Production: <a href=\"https://makagent.maktechgroup.com\">https://makagent.maktechgroup.com</a> · Privacy contact: <a href=\"mailto:privacy@maktechgroup.com\">privacy@maktechgroup.com</a>.",
     sections: [
       [
         "1. Delete or reset data while signed in",
@@ -196,7 +196,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
 <li>Sign in at <a href="https://makagent.maktechgroup.com/login">https://makagent.maktechgroup.com/login</a> as the workspace owner.</li>
 <li>Open <strong>Settings → API &amp; data → Request data deletion</strong> (or use Demo controls / Settings reset for local demo workspaces).</li>
 <li>Confirm the business and channels in scope and submit. Save the <strong>confirmation code</strong> shown on screen.</li>
-<li>To stop new Meta access: open <strong>Connections</strong>, disconnect the channel, then revoke SalesPilot AI / MakTech in Meta Business Suite or Facebook → Settings → Business integrations.</li>
+<li>To stop new Meta access: open <strong>Connections</strong>, disconnect the channel, then revoke MakAgent / MakTech in Meta Business Suite or Facebook → Settings → Business integrations.</li>
 </ol>
 <p>You can also use the button below to clear <em>local browser demo data</em> only (does not delete server-side production records).</p><!--RESET-->`,
       ],
@@ -204,7 +204,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
         "2. Request deletion by email (no login)",
         `<p>Email <a href="mailto:privacy@maktechgroup.com">privacy@maktechgroup.com</a> from the account email on file with:</p>
 <ul>
-<li>subject line: <strong>Data deletion request — SalesPilot AI</strong>;</li>
+<li>subject line: <strong>Data deletion request — MakAgent</strong>;</li>
 <li>business / workspace name;</li>
 <li>account email;</li>
 <li>Meta Page / Instagram / WhatsApp identifiers if known;</li>
@@ -214,7 +214,7 @@ export const LEGAL: Record<string, { intro: string; sections: [string, string][]
       ],
       [
         "3. Customer (end-user) requests",
-        `<p>If you messaged a shop that uses SalesPilot AI, contact that business first. They control the customer relationship. The business may instruct us to delete the SaaS copy of your conversation. Deleting our copy does not automatically erase copies held independently by Meta, payment providers, couriers or the merchant’s own systems.</p>`,
+        `<p>If you messaged a shop that uses MakAgent, contact that business first. They control the customer relationship. The business may instruct us to delete the SaaS copy of your conversation. Deleting our copy does not automatically erase copies held independently by Meta, payment providers, couriers or the merchant’s own systems.</p>`,
       ],
       [
         "4. What we delete",

@@ -10,7 +10,7 @@ Use **INTEGRATIONS.md** to start the backend and create its real owner. Do not s
 2. Add **Sign In with LinkedIn using OpenID Connect**.
 3. Configure `LINKEDIN_CLIENT_ID` and `LINKEDIN_CLIENT_SECRET`.
 4. Register `<PUBLIC_BASE_URL>/api/oauth/linkedin/callback` exactly.
-5. This adapter requests `openid profile email`, exchanges the authorization code server-side and reads `/v2/userinfo`; the ID token is not used as a SalesPilot login token. The official OIDC documentation specifies those scopes/endpoints. [3](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2)
+5. This adapter requests `openid profile email`, exchanges the authorization code server-side and reads `/v2/userinfo`; the ID token is not used as a MakAgent login token. The official OIDC documentation specifies those scopes/endpoints. [3](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2)
 6. **Authorize account**, select the returned member and save. LinkedIn posting is not implemented and `w_member_social` is intentionally not requested; sharing is a separate LinkedIn product/permission. [5](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin)
 
 ## 2. Facebook & Instagram
@@ -20,7 +20,7 @@ Use **INTEGRATIONS.md** to start the backend and create its real owner. Do not s
 3. Register `<PUBLIC_BASE_URL>/api/oauth/meta/callback`.
 4. The adapter uses **Facebook Login**, requesting `pages_show_list`, `pages_read_engagement`, `instagram_basic`, then reads managed Pages and linked professional Instagram assets. Meta distinguishes the Facebook-login permission family from Instagram Login’s `instagram_business_*` permissions. [1](https://developers.facebook.com/docs/instagram-platform/overview/)
 5. If your dashboard requires a Facebook Login for Business configuration ID, create a configuration using **user access tokens** with those permissions, set `META_LOGIN_CONFIG_ID`, and ensure it includes the intended scopes. When a configuration ID is set, its dashboard configuration controls requested access. Business Integration System User configurations are not this adapter’s flow. Meta documents the supported user-token permissions. [9](https://developers.facebook.com/documentation/facebook-login/facebook-login-for-business)
-6. Grant Page assets and select the returned Pages/Instagram profiles in SalesPilot. Having a Page name in demo seeds does not grant access to any real Page.
+6. Grant Page assets and select the returned Pages/Instagram profiles in MakAgent. Having a Page name in demo seeds does not grant access to any real Page.
 7. This implements linked professional Instagram accounts through Facebook Login, not independent/direct Instagram Login. Your Page/account roles and provider-granted permissions must satisfy the current IG User requirements; some Business Manager role cases require additional access beyond this minimal adapter. [5](https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/)
 8. If the provider rejects access, check actual granted scopes, asset roles and review/business requirements rather than toggling a local “approved” label. No publishing or messaging scopes are requested.
 
@@ -55,7 +55,7 @@ Use **INTEGRATIONS.md** to start the backend and create its real owner. Do not s
 1. Create your own bot with Telegram’s official **BotFather**.
 2. Add it to the intended channel/group as an administrator. For a channel it must have permission to post messages.
 3. Obtain the group/channel ID or public `@username`.
-4. Sign in to SalesPilot’s real workspace, choose **Add channel / group**, and enter the bot token plus target ID in the masked secure form.
+4. Sign in to MakAgent’s real workspace, choose **Add channel / group**, and enter the bot token plus target ID in the masked secure form.
 5. The server calls `getMe`, `getChat`, and `getChatMember`; it requires an actual bot, a supported group/channel, and the administrator/posting permission check. Telegram documents those methods and bot-token API authentication. [1](https://core.telegram.org/bots/api)
 6. No bot webhook, polling process or message is created by connecting. Rotate/revoke at BotFather if needed; local remove does not invalidate the token.
 
@@ -71,7 +71,7 @@ Use **INTEGRATIONS.md** to start the backend and create its real owner. Do not s
 
 1. Use an HTTPS self-hosted WordPress site with REST API and Application Passwords enabled.
 2. The server operator adds its **exact public hostname** to `WORDPRESS_ALLOWED_HOSTS`, then restarts the backend. Do not use a wildcard or private/loopback address.
-3. In WordPress’s user profile, create a dedicated **Application Password** for SalesPilot; avoid your main interactive password. WordPress documents these as revocable per-application credentials. [3](https://developer.wordpress.org/advanced-administration/security/application-passwords/)
+3. In WordPress’s user profile, create a dedicated **Application Password** for MakAgent; avoid your main interactive password. WordPress documents these as revocable per-application credentials. [3](https://developer.wordpress.org/advanced-administration/security/application-passwords/)
 4. Choose **Add WordPress site**, enter the HTTPS URL, username and Application Password. The server calls `/wp-json/wp/v2/users/me?context=edit` with Basic authentication over verified TLS; Application Password REST authentication is documented by WordPress. [1](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/)
 5. The backend rejects redirects, non-443 ports, credentials/query/fragment in the URL, non-allowlisted hosts and private/reserved DNS results. It pins the validated public address while retaining the hostname for TLS SNI/certificate verification.
 6. WordPress.com OAuth, multisite routing edge cases, `?rest_route=`-only sites and publishing are not implemented. A successful identity check does not certify that this user can publish posts.
