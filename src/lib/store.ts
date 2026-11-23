@@ -8,7 +8,7 @@ import { SEED, type Seed } from "./data";
  * - SSR / first paint always renders the deterministic seed, so hydration never mismatches.
  * - After mount the persisted state in localStorage is adopted and subscribers are notified.
  */
-const KEY = "MakAgent.next.v3";
+const KEY = "makagent.next.v3";
 const clone = <T,>(x: T): T => (x === undefined ? x : JSON.parse(JSON.stringify(x)));
 
 type State = Seed & Record<string, any>;

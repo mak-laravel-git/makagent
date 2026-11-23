@@ -10,7 +10,7 @@ npm run dev        # http://localhost:3100
 npm run build && npm start   # http://localhost:3000
 ```
 
-Log in with **Enter as Client** or **Enter as Admin**. Demo state lives in `localStorage` (`MakAgent.next.v3`).
+Log in with **Enter as Client** or **Enter as Admin**. Demo state lives in `localStorage` (`makagent.next.v3`).
 
 ## Optional Python backend
 

@@ -33,7 +33,7 @@ Publishing/sending, media upload, inbox/comment synchronization, durable jobs, w
 Requires Python **3.12 or 3.13**. No Node/npm or frontend build is needed. Unlike the demo, real connections cannot run by double-clicking HTML or with a Python static-only server. **Never run a generic static server over a configured tree containing `.env` or private credentials; use the whitelisted backend instead.**
 
 ```sh
-cd MakAgent
+cd makagent
 python3 -m venv .venv
 # macOS/Linux:
 . .venv/bin/activate
