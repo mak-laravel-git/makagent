@@ -10,6 +10,9 @@ __pycache__/
 *.key
 *.log
 node_modules/
-web/.next/
+.next/
+out/
+tsconfig.tsbuildinfo
+next-env.d.ts
 .DS_Store
 *.pem
