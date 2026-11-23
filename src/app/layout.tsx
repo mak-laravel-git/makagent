@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, DM_Mono, Noto_Sans_Bengali } from "next/font/google";
+import { DM_Sans, DM_Mono, Noto_Sans_Bengali, Syne } from "next/font/google";
 import { Providers } from "@/components/providers";
 import "./globals.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans", display: "swap", axes: ["opsz"] });
 const dmMono = DM_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-dm-mono", display: "swap" });
 const bengali = Noto_Sans_Bengali({ subsets: ["bengali"], variable: "--font-bengali", display: "swap" });
+const syne = Syne({ subsets: ["latin"], variable: "--font-syne", display: "swap", weight: ["600", "700", "800"] });
 
 export const metadata: Metadata = {
   title: { default: "MakAgent — by MakTech", template: "%s · MakAgent" },
@@ -19,7 +20,7 @@ const themeScript = `try{var t=localStorage.getItem('sp-theme');document.documen
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning className={`${dmSans.variable} ${dmMono.variable} ${bengali.variable}`}>
+    <html lang="en" data-theme="dark" suppressHydrationWarning className={`${dmSans.variable} ${dmMono.variable} ${bengali.variable} ${syne.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

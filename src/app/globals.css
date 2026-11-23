@@ -87,6 +87,7 @@
 @theme inline {
   --font-sans: var(--font-dm-sans), var(--font-bengali), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-dm-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-brand: var(--font-syne), var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 
   --color-bg: var(--bg);
   --color-bg-deep: var(--bg-deep);
